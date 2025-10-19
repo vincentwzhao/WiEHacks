@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriMeals</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        p strong {
+            font-weight: bold;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .buttons button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: #27685e;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons button:hover {
+            background-color: #1e5148;
+        }
+
+        #generateBtn {
+            padding: 15px 30px;
+            background-color: black;
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        #generateBtn:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NutriMeals</h1>
+        <p>Your Personalized Meal Prep Website<br>
+        We know how difficult it can be to find time to plan and make meals.<br>
+        <strong>That’s why we do it for you.</strong><br>
+        We’ll generate a list of quick and meal ideas - based on your daily needs</p>
+
+        <div class="buttons">
+            <button id="caloriesBtn">Calories</button>
+            <button id="proteinBtn">Protein</button>
+            <button id="vitaminBtn">Vitamin</button>
+        </div>
+
+        <button id="generateBtn">Generate Meal Ideas</button>
+    </div>
+
+    <script>
+        // Example JS interactivity
+        const caloriesBtn = document.getElementById('caloriesBtn');
+        const proteinBtn = document.getElementById('proteinBtn');
+        const vitaminBtn = document.getElementById('vitaminBtn');
+        const generateBtn = document.getElementById('generateBtn');
+
+        let selectedOption = '';
+
+        caloriesBtn.addEventListener('click', () => {
+            selectedOption = 'Calories';
+            alert('Selected: Calories');
+        });
+
+        proteinBtn.addEventListener('click', () => {
+            selectedOption = 'Protein';
+            alert('Selected: Protein');
+        });
+
+        vitaminBtn.addEventListener('click', () => {
+            selectedOption = 'Vitamin';
+            alert('Selected: Vitamin');
+        });
+
+        generateBtn.addEventListener('click', () => {
+            if(selectedOption) {
+                alert(`Generating meal ideas based on ${selectedOption}...`);
+            } else {
+                alert('Please select an option first!');
+            }
+        });
+    </script>
+</body>
+</html>
